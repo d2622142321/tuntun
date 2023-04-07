@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>拼字母游戏</title>
+    <style>
+        #word-puzzle {
+	    margin-top:44px;
+	    margin-left:200px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 600px;
+            height: 150px;
+        }
+
+        #word-puzzle .letter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+            font-weight: bold;
+            border: 1px solid black;
+        }
+
+        #letter-puzzle {
+            display: flex;
+            flex-wrap: wrap;
+            width: 788px;
+            height: 150px;
+            
+        }
+
+        #letter-puzzle .letter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+            font-weight: bold;
+            border: 1px solid black;
+            margin: 5px;
+            cursor: move;
+	    background-color: lightgray;
+            border: none;
+        }
+
+        .empty {
+            background-color: lightgray;
+            border: none;
+        }
+
+        /* 拖拽时的样式 */
+        .dragging {
+            opacity: 0.5;
+            border: 1px dotted black;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>拼字母游戏</h1>
+    
+    <div id="letter-puzzle">
+        <div class="letter" draggable="true">A</div>
+        <div class="letter" draggable="true">B</div>
+        <div class="letter" draggable="true">C</div>
+        <div class="letter" draggable="true">D</div>
+        <div class="letter" draggable="true">E</div>
+        <div class="letter" draggable="true">F</div>
+        <div class="letter" draggable="true">G</div>
+        <div class="letter" draggable="true">H</div>
+        <div class="letter" draggable="true">I</div>
+        <div class="letter" draggable="true">J</div>
+        <div class="letter" draggable="true">K</div>
+        <div class="letter" draggable="true">L</div>
+        <div class="letter" draggable="true">M</div>
+        <div class="letter" draggable="true">N</div>
+        <div class="letter" draggable="true">O</div>
+        <div class="letter" draggable="true">P</div>
+        <div class="letter" draggable="true">Q</div>
+        <div class="letter" draggable="true">R</div>
+        <div class="letter" draggable="true">S</div>
+        <div class="letter" draggable="true">T</div>
+        <div class="letter" draggable="true">U</div>
+        <div class="letter" draggable="true">V</div>
+        <div class="letter" draggable="true">W</div>
+        <div class="letter" draggable="true">X</div>
+        <div class="letter" draggable="true">Y</div>
+        <div class="letter" draggable="true">Z</div>
+	<div id="word-puzzle">
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+       		<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+       	 	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+      		<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+       	 	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        	<div class="letter empty"></div>
+        </div>
+    </div>
+
+</body>
+	<script>
+               // 找到空白区域和所有字母区域
+        const emptys = document.querySelectorAll('.empty');
+        const letters = document.querySelectorAll('#word-puzzle .letter:not(.empty), #letter-puzzle .letter');
+	const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+
+        // 为所有字母添加拖拽事件
+        letters.forEach(letter => {
+            letter.addEventListener('dragstart', () => {
+                letter.classList.add('dragging');
+            });
+            letter.addEventListener('dragend', () => {
+                letter.classList.remove('dragging');
+		const randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+            	letter.innerHTML = randomLetter;
+		});
+        });
+
+        // 空白区域的拖拽事件
+	emptys.forEach(empty =>{
+       		empty.addEventListener('dragover', e => {
+    			e.preventDefault(); // 阻止默认行为
+    			empty.classList.add('hovering');
+  		});
+  		empty.addEventListener('dragleave', () => {
+    			empty.classList.remove('hovering');
+  		});
+  		empty.addEventListener('drop', e => {
+    			e.preventDefault(); // 阻止默认行为
+    			const draggingLetter = document.querySelector('.dragging');
+			empty.appendChild(draggingLetter.cloneNode(true));
+    			empty.innerHTML = draggingLetter.innerHTML;
+    			draggingLetter.innerHTML = '';
+    			empty.classList.remove('hovering');
+    		// 给下一个空白区域添加hovering类
+    		const nextEmpty = empty.nextElementSibling;
+    		if (nextEmpty && nextEmpty.classList.contains('empty')) {
+      			nextEmpty.classList.add('hovering');
+    		}
+		});
+	});
+    </script>
+</html>
+
